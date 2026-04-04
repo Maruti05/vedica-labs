@@ -46,7 +46,7 @@ Found a bug? Let us know with screenshots or videos, and we'll fix it fast.
 ### 📱 **Reach Out**
 - **Email:** [vedicalabs@gmail.com](mailto:vedicalabs@gmail.com)
 - **Location:** Dharwad, Karnataka 580001, India
-- **Hours:** Monday–Friday 9 AM–6 PM IST | Saturday 10 AM–2 PM IST
+- **Hours:** Saturday 10 AM–2 PM IST
 
 ---
 
