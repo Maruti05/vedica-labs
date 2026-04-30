@@ -275,7 +275,7 @@
 /* ============ PRIVACY POLICY PAGE ============ */
 .policy-layout {
   display: grid;
-  grid-template-columns: 280px 1fr;
+  grid-template-columns: 260px 1fr;
   gap: var(--space-2xl);
   align-items: start;
 }
@@ -283,6 +283,11 @@
 .policy-sidebar {
   position: sticky;
   top: calc(var(--nav-height) + 24px);
+  max-height: calc(100vh - var(--nav-height) - 48px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+  flex-shrink: 0;
 }
 
 .policy-toc {
@@ -308,13 +313,18 @@
   font-size: 0.85rem;
   text-decoration: none;
   transition: all var(--transition-fast);
+  border-left: 3px solid transparent;
 }
 .toc-links a:hover, .toc-links a.active {
   color: var(--accent);
   background: var(--accent-glow);
+  border-left-color: var(--accent);
 }
 
-.policy-content { min-width: 0; }
+.policy-content {
+  min-width: 0;
+  width: 100%;
+}
 .policy-section {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -698,7 +708,18 @@
 @media (max-width: 1024px) {
   .hero-visual { display: none; }
   .policy-layout, .issue-layout, .contact-layout { grid-template-columns: 1fr; }
-  .policy-sidebar { position: static; }
+  .policy-sidebar { 
+    position: static; 
+    max-height: none;
+    overflow-y: visible;
+  }
+  .policy-toc {
+    position: sticky;
+    top: calc(var(--nav-height) + 16px);
+    background: var(--surface);
+    backdrop-filter: blur(12px);
+    z-index: 10;
+  }
   .contact-form-card { position: static; }
   .mission-grid { grid-template-columns: 1fr; }
   .values-grid { grid-template-columns: repeat(2, 1fr); }
@@ -715,6 +736,23 @@
   .values-grid { grid-template-columns: 1fr; }
   .features-grid { grid-template-columns: 1fr; }
   .policy-section { padding: var(--space-lg); }
+  
+  /* Mobile TOC - collapsible at top */
+  .policy-toc {
+    position: relative;
+    top: 0;
+    margin-bottom: var(--space-lg);
+  }
+  .toc-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .toc-links a {
+    font-size: 0.75rem;
+    padding: 6px 10px;
+    white-space: nowrap;
+  }
 }
 @media (max-width: 480px) {
   .hero-stats { gap: var(--space-lg); }

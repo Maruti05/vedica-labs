@@ -268,6 +268,44 @@ function initTOCScroll() {
   const tocLinks = document.querySelectorAll('.toc-links a');
   if (!tocLinks.length) return;
   const sections = document.querySelectorAll('.policy-section[id]');
+  if (!sections.length) return;
+  
+  // Use a more reliable approach: track scroll position directly
+  const updateActiveLink = () => {
+    const scrollPos = window.scrollY + window.innerHeight / 3;
+    let currentSection = null;
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      if (sectionTop <= scrollPos && (sectionTop + sectionHeight) > scrollPos) {
+        currentSection = section;
+      }
+    });
+    
+    if (currentSection) {
+      tocLinks.forEach(l => l.classList.remove('active'));
+      const active = document.querySelector(`.toc-links a[href="#${currentSection.id}"]`);
+      if (active) active.classList.add('active');
+    }
+  };
+  
+  // Initial check
+  updateActiveLink();
+  
+  // Update on scroll with throttling
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        updateActiveLink();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+  
+  // Also keep observer as fallback for smooth transitions
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -276,7 +314,8 @@ function initTOCScroll() {
         if (active) active.classList.add('active');
       }
     });
-  }, { rootMargin: '-30% 0px -60% 0px' });
+  }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+  
   sections.forEach(s => observer.observe(s));
 }
 
