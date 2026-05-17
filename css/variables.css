@@ -1,49 +1,68 @@
-/* =============================================
-   VEDICA LABS — Design System Variables
-   ============================================= */
-
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
 
 :root {
-  /* Brand Colors */
-  --primary: #0A0F1E;
-  --secondary: #111827;
-  --surface: #161D2F;
-  --surface-2: #1E2740;
-  --accent: #4F8EF7;
-  --accent-glow: rgba(79, 142, 247, 0.25);
-  --accent-2: #7C5CFC;
-  --accent-3: #00D4AA;
+  /* Brand Colors — HSL values for runtime manipulation */
+  --accent-h: 217;
+  --accent-s: 90%;
+  --accent-l: 64%;
+  --accent-2-h: 252;
+  --accent-2-s: 97%;
+  --accent-2-l: 66%;
+  --accent-3-h: 168;
+  --accent-3-s: 100%;
+  --accent-3-l: 42%;
+
+  --accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  --accent-glow: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.25);
+  --accent-2: hsl(var(--accent-2-h), var(--accent-2-s), var(--accent-2-l));
+  --accent-3: hsl(var(--accent-3-h), var(--accent-3-s), var(--accent-3-l));
   --danger: #FF4D6A;
   --warning: #FFB547;
   --success: #22D07A;
 
-  /* Text */
+  /* Surface Colors (Dark Theme) */
+  --primary: #0A0F1E;
+  --secondary: #111827;
+  --surface: #161D2F;
+  --surface-2: #1E2740;
+
+  /* Text Colors */
   --text-primary: #F0F4FF;
   --text-secondary: #9BA8C1;
   --text-muted: #5C6882;
 
-  /* Borders */
+  /* Borders & Dividers */
   --border: rgba(255, 255, 255, 0.07);
-  --border-hover: rgba(79, 142, 247, 0.4);
+  --border-hover: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.4);
 
   /* Gradients */
-  --gradient-hero: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(79, 142, 247, 0.18) 0%, transparent 70%);
-  --gradient-accent: linear-gradient(135deg, #4F8EF7 0%, #7C5CFC 100%);
+  --gradient-hero: radial-gradient(ellipse 80% 60% at 50% 0%, hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.18) 0%, transparent 70%);
+  --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
   --gradient-card: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
 
   /* Shadows */
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
   --shadow-md: 0 4px 20px rgba(0,0,0,0.5);
   --shadow-lg: 0 8px 40px rgba(0,0,0,0.6);
-  --shadow-accent: 0 4px 30px rgba(79, 142, 247, 0.35);
-  --shadow-glow: 0 0 60px rgba(79, 142, 247, 0.2);
+  --shadow-accent: 0 4px 30px hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.35);
+  --shadow-glow: 0 0 60px hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.2);
 
   /* Typography */
-  --font-display: 'Syne', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
+  --font-display: 'Syne', 'Arial Black', system-ui, sans-serif;
+  --font-body: 'DM Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
 
-  /* Spacing */
+  /* Fluid Type Scale — clamp(min, preferred, max) */
+  --text-xs: clamp(0.69rem, 0.65rem + 0.20vw, 0.75rem);
+  --text-sm: clamp(0.8rem, 0.76rem + 0.20vw, 0.875rem);
+  --text-base: clamp(0.94rem, 0.88rem + 0.30vw, 1rem);
+  --text-md: clamp(1.06rem, 1.00rem + 0.30vw, 1.125rem);
+  --text-lg: clamp(1.19rem, 1.10rem + 0.45vw, 1.25rem);
+  --text-xl: clamp(1.38rem, 1.25rem + 0.65vw, 1.5rem);
+  --text-2xl: clamp(1.63rem, 1.44rem + 0.95vw, 1.875rem);
+  --text-3xl: clamp(1.94rem, 1.69rem + 1.25vw, 2.25rem);
+  --text-4xl: clamp(2.5rem, 2.0rem + 2.5vw, 5rem);
+
+  /* Spacing Scale */
   --space-xs: 4px;
   --space-sm: 8px;
   --space-md: 16px;
@@ -59,12 +78,80 @@
   --radius-xl: 32px;
   --radius-full: 9999px;
 
-  /* Transitions */
-  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-base: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Transition Curves — cubic-bezier variants */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --transition-fast: 0.15s var(--ease-in-out);
+  --transition-base: 0.25s var(--ease-in-out);
+  --transition-slow: 0.4s var(--ease-in-out);
 
   /* Layout */
   --container-max: 1280px;
   --nav-height: 72px;
+
+  /* Navbar (theme-aware) */
+  --nav-bg: rgba(10, 15, 30, 0.8);
+  --nav-bg-scrolled: rgba(10, 15, 30, 0.95);
+  --nav-border: rgba(255, 255, 255, 0.07);
+
+  /* Z-Index Scale */
+  --z-dropdown: 100;
+  --z-navbar: 1000;
+  --z-mobile-nav: 999;
+  --z-overlay: 9999;
+}
+
+/* ============ LIGHT THEME ============ */
+[data-theme="light"] {
+  --primary: #FFFFFF;
+  --secondary: #F8FAFC;
+  --surface: #FFFFFF;
+  --surface-2: #F1F5F9;
+
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+
+  --border: rgba(0, 0, 0, 0.08);
+  --border-hover: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.4);
+
+  --gradient-hero: radial-gradient(ellipse 80% 60% at 50% 0%, hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.08) 0%, transparent 70%);
+  --gradient-card: linear-gradient(135deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.01) 100%);
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.1);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+  --shadow-accent: 0 4px 30px hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.25);
+  --shadow-glow: 0 0 60px hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --nav-bg-scrolled: rgba(255, 255, 255, 0.95);
+  --nav-border: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .noise-overlay {
+  opacity: 0.15;
+}
+
+/* ============ FALLBACKS @supports ============ */
+@supports not (color: hsl(0, 0%, 0%)) {
+  :root {
+    --accent: #4F8EF7;
+    --accent-glow: rgba(79, 142, 247, 0.25);
+    --accent-2: #7C5CFC;
+    --accent-3: #00D4AA;
+  }
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  :root {
+    --nav-bg: rgba(10, 15, 30, 0.95);
+    --nav-bg-scrolled: rgba(10, 15, 30, 0.98);
+  }
+  [data-theme="light"] {
+    --nav-bg: rgba(255, 255, 255, 0.98);
+    --nav-bg-scrolled: rgba(255, 255, 255, 0.99);
+  }
 }

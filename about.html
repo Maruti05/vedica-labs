@@ -3,31 +3,143 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="About Vedica Labs — Our story, mission, team, and values." />
-  <title>About Us — Vedica Labs</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+
+  <meta name="description" content="About Vedica Labs — Our story, mission, team, and values. Learn how we build AI-powered apps from Dharwad, Karnataka." />
+  <meta name="keywords" content="vedica labs about, maruti mangrani, ashok mangrani, ai team india, dharwad startup" />
+  <meta name="author" content="Vedica Labs" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vedicalabs.in/about.html" />
+  <meta property="og:title" content="About Us — Vedica Labs" />
+  <meta property="og:description" content="Our story, mission, team, and values. Built in India, built for everyone." />
+  <meta property="og:image" content="https://vedicalabs.in/assets/og-image.png" />
+  <meta property="og:locale" content="en_IN" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://vedicalabs.in/about.html" />
+  <meta name="twitter:title" content="About Us — Vedica Labs" />
+  <meta name="twitter:description" content="Our story, mission, team, and values. Built in India, built for everyone." />
+  <meta name="twitter:image" content="https://vedicalabs.in/assets/og-image.png" />
+
+  <link rel="canonical" href="https://vedicalabs.in/about.html" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E⚡%3C/text%3E%3C/svg%3E" />
+
+  <script>
+    (function() {
+      var theme = localStorage.getItem('vl-theme');
+      if (!theme) {
+        theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
+  <link rel="preload" href="css/variables.css" as="style" />
+  <link rel="preload" href="css/base.css" as="style" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" as="style" />
+
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/navbar.css" />
   <link rel="stylesheet" href="css/footer.css" />
   <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/utilities.css" />
+
+  <style>
+    .timeline-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-2xl, 64px);
+      align-items: center;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-md, 16px);
+    }
+    @media (max-width: 1024px) {
+      .timeline-stats-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .stats-grid { grid-template-columns: 1fr; }
+      .stats-grid .card { padding: var(--space-lg, 24px); }
+      .stats-grid .card > div:first-child { font-size: 2rem !important; }
+    }
+    @media (max-width: 480px) {
+      .team-grid { grid-template-columns: 1fr; }
+      .team-card.you-card { min-height: auto; }
+    }
+    .team-card.you-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-style: dashed;
+      background: transparent;
+      min-height: 320px;
+    }
+    .section-hero-about {
+      padding-bottom: var(--space-3xl, 96px);
+    }
+    @media (max-width: 640px) {
+      .section-hero-about { padding-bottom: var(--space-2xl, 64px); }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Vedica Labs",
+    "url": "https://vedicalabs.in",
+    "logo": "https://vedicalabs.in/assets/og-image.png",
+    "description": "Building beautiful, AI-powered digital products for the world.",
+    "foundingDate": "2022",
+    "founder": [
+      { "@type": "Person", "name": "Maruti Mangrani" }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dharwad",
+      "addressRegion": "Karnataka",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "vedicalabs@gmail.com",
+      "contactType": "customer service"
+    },
+    "sameAs": [
+      "https://twitter.com/vedicalabs",
+      "https://linkedin.com/company/vedicalabs",
+      "https://github.com/Maruti05",
+      "https://instagram.com/vedicalabs"
+    ]
+  }
+  </script>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+  <title>About Us — Vedica Labs</title>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <div class="noise-overlay"></div>
   <div id="navbar-root"></div>
 
-  <main class="page-wrapper">
+  <main class="page-wrapper" id="main-content">
 
     <!-- HERO -->
-    <div class="page-hero" style="padding-bottom: var(--space-3xl);">
+    <div class="page-hero section-hero-about">
       <div class="container">
         <div class="page-hero-breadcrumb">
           <a href="index.html">Home</a>
           <span>/</span>
           <span>About Us</span>
         </div>
-        <span class="badge badge-accent" style="margin-bottom:16px">👥 Our Story</span>
-        <h1 class="display-lg" style="margin-bottom:16px">Built in India,<br><span class="text-gradient">Built for Everyone</span></h1>
+        <span class="badge badge-accent mb-md">👥 Our Story</span>
+        <h1 class="display-lg mb-md">Built in India,<br><span class="text-gradient">Built for Everyone</span></h1>
         <p class="section-desc">We're a small team of engineers and designers obsessed with shipping products that make a real difference — one app at a time.</p>
       </div>
     </div>
@@ -38,22 +150,22 @@
         <div class="mission-grid">
           <div class="animate-fadeInUp">
             <span class="section-label">Our Mission</span>
-            <h2 class="display-md" style="margin: 12px 0 24px">We Believe Technology Should Feel Human</h2>
-            <p style="color:var(--text-secondary); line-height:1.9; margin-bottom:20px">
+            <h2 class="display-md mt-sm mb-lg">We Believe Technology Should Feel Human</h2>
+            <p class="text-secondary" style="line-height:1.9; margin-bottom:20px">
               Vedica Labs was founded with one belief: the best software feels invisible. It just works. It anticipates your needs, stays out of your way, and delights in the quiet moments when everything clicks perfectly.
             </p>
-            <p style="color:var(--text-secondary); line-height:1.9; margin-bottom:32px">
+            <p class="text-secondary" style="line-height:1.9; margin-bottom:32px">
               We build AI-powered apps for India's growing digital economy — from AI-driven hiring platforms to fitness management tools — all crafted with the same obsessive attention to detail.
             </p>
-            <div style="display:flex; gap:16px; flex-wrap:wrap">
+            <div class="flex gap-md" style="flex-wrap:wrap">
               <a href="contact.html" class="btn btn-primary">Work With Us</a>
-              <a href="../index.html#apps" class="btn btn-secondary">See Our Apps</a>
+              <a href="index.html#apps" class="btn btn-secondary">See Our Apps</a>
             </div>
           </div>
           <div class="animate-fadeInUp animate-delay-2">
             <div class="mission-card">
               <div class="mission-number">02</div>
-              <h3 style="margin-bottom:12px">Apps shipped and growing</h3>
+              <h3 class="mb-sm">Apps shipped and growing</h3>
               <p class="mission-text">From AI voice interviews to gym management — every app solves a real problem for real people across India.</p>
             </div>
           </div>
@@ -62,7 +174,7 @@
     </section>
 
     <!-- VALUES -->
-    <section class="section" style="background:var(--secondary)">
+    <section class="section section-alt content-visibility-auto">
       <div class="container">
         <div class="section-header">
           <span class="section-label">What We Stand For</span>
@@ -94,7 +206,7 @@
     </section>
 
     <!-- TEAM -->
-    <section class="section">
+    <section class="section content-visibility-auto">
       <div class="container">
         <div class="section-header">
           <span class="section-label">The People</span>
@@ -108,77 +220,41 @@
             <div class="team-role">Founder & CEO</div>
             <p class="team-bio">Full-stack engineer turned founder. Passionate about AI, product design, and building for Bharat.</p>
             <div class="team-social">
-              <!-- <a href="#" class="social-link" style="width:32px;height:32px;font-size:0.75rem">in</a>
-              <a href="#" class="social-link" style="width:32px;height:32px;font-size:0.75rem">𝕏</a> -->
-              <a href="https://github.com/Maruti05" class="social-link" style="width:32px;height:32px;font-size:0.75rem" title="GitHub">
-                <img src="assets/icons8-github.gif" alt="GitHub" style="width:20px;height:20px;" />
+              <a href="https://github.com/Maruti05" target="_blank" rel="noopener noreferrer" class="social-link" style="width:32px;height:32px;font-size:0.75rem" title="GitHub">
+                <img src="assets/icons8-github.gif" alt="Maruti Mangrani GitHub" style="width:20px;height:20px;" loading="lazy" />
               </a>
             </div>
           </div>
 
-          <!-- <div class="team-card animate-fadeInUp animate-delay-1">
-            <div class="team-avatar" style="background: linear-gradient(135deg, #22D07A, #00D4AA)">P</div>
-            <h3 class="team-name">Priya Nair</h3>
-            <div class="team-role">Head of Design</div>
-            <p class="team-bio">Ex-Zomato designer. Creates interfaces that feel effortless — obsessed with motion and typography.</p>
-            <div class="team-social">
-              <a href="#" class="social-link" style="width:32px;height:32px;font-size:0.75rem">in</a>
-              <a href="#" class="social-link" style="width:32px;height:32px;font-size:0.75rem">📸</a>
-            </div>
-          </div> -->
-
-          <!-- <div class="team-card animate-fadeInUp animate-delay-2">
-            <div class="team-avatar" style="background: linear-gradient(135deg, #FF4D6A, #FFB547)">R</div>
-            <h3 class="team-name">Rahul Desai</h3>
-            <div class="team-role">Lead Engineer</div>
-            <p class="team-bio">Backend architect and AI integration specialist. Keeps our systems running at 99.9% uptime.</p>
-            <div class="team-social">
-              <a href="#" class="social-link" style="width:32px;height:32px;font-size:0.75rem">GH</a>
-              <a href="#" class="social-link" style="width:32px;height:32px;font-size:0.75rem">in</a>
-            </div>
-          </div> -->
-
-          <!-- <div class="team-card animate-fadeInUp animate-delay-3">
-            <div class="team-avatar" style="background: linear-gradient(135deg, #FFB547, #FF8C42)">S</div>
-            <h3 class="team-name">Sneha Kulkarni</h3>
-            <div class="team-role">Mobile Developer</div>
-            <p class="team-bio">Android & React Native specialist from Dharwad. Builds apps users rate 5 stars.</p>
-            <div class="team-social">
-              <a href="#" class="social-link" style="width:32px;height:32px;font-size:0.75rem">GH</a>
-              <a href="#" class="social-link" style="width:32px;height:32px;font-size:0.75rem">𝕏</a>
-            </div>
-          </div> -->
-
-          <div class="team-card animate-fadeInUp animate-delay-4">
+          <div class="team-card animate-fadeInUp animate-delay-1">
             <div class="team-avatar" style="background: linear-gradient(135deg, #7C5CFC, #4F8EF7)">A</div>
             <h3 class="team-name">Ashok Mangrani</h3>
             <div class="team-role">AI/ML Engineer</div>
             <p class="team-bio">Trains the models that power our AI features — from Groq LLaMA integrations to custom NLP pipelines.</p>
             <div class="team-social">
-              <a href="https://github.com/amangrani250" class="social-link" style="width:32px;height:32px;font-size:0.75rem" title="GitHub">
-                <img src="assets/icons8-github.gif" alt="GitHub" style="width:20px;height:20px;" />
+              <a href="https://github.com/amangrani250" target="_blank" rel="noopener noreferrer" class="social-link" style="width:32px;height:32px;font-size:0.75rem" title="GitHub">
+                <img src="assets/icons8-github.gif" alt="Ashok Mangrani GitHub" style="width:20px;height:20px;" loading="lazy" />
               </a>
-              <!-- <a href="#" class="social-link" style="width:32px;height:32px;font-size:0.75rem">in</a> -->
             </div>
           </div>
 
-          <div class="team-card animate-fadeInUp animate-delay-5" style="display:flex; flex-direction:column; align-items:center; justify-content:center; border-style: dashed; background: transparent;">
+          <div class="team-card animate-fadeInUp animate-delay-2 you-card">
             <div style="font-size:2.5rem; margin-bottom:12px">✨</div>
-            <h3 class="team-name" style="margin-bottom:8px">You?</h3>
-            <div class="team-role" style="margin-bottom:16px">Open Roles</div>
+            <h3 class="team-name mb-sm">You?</h3>
+            <div class="team-role mb-md">Open Roles</div>
             <a href="contact.html" class="btn btn-secondary btn-sm">See Openings</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TIMELINE -->
-    <section class="section" style="background:var(--secondary)">
+    <!-- TIMELINE + STATS -->
+    <section class="section section-alt content-visibility-auto">
       <div class="container">
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--space-2xl); align-items:center">
+        <div class="timeline-stats-grid">
           <div class="animate-fadeInUp">
             <span class="section-label">Our Journey</span>
-            <h2 class="display-md" style="margin: 12px 0 32px">From Idea to <span class="text-gradient">Impact</span></h2>
+            <h2 class="display-md mt-sm mb-xl">From Idea to <span class="text-gradient">Impact</span></h2>
             <div class="timeline">
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
@@ -207,22 +283,22 @@
             </div>
           </div>
           <div class="animate-fadeInUp animate-delay-2">
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--space-md)">
+            <div class="stats-grid">
               <div class="card" style="text-align:center">
                 <div style="font-size:2.5rem; font-weight:800; font-family:var(--font-display); color:var(--accent)">2+</div>
-                <div style="color:var(--text-secondary); font-size:0.85rem; margin-top:4px">Apps Shipped</div>
+                <div class="text-secondary" style="font-size:0.85rem; margin-top:4px">Apps Shipped</div>
               </div>
               <div class="card" style="text-align:center">
                 <div style="font-size:2.5rem; font-weight:800; font-family:var(--font-display); color:var(--accent-3)">1k+</div>
-                <div style="color:var(--text-secondary); font-size:0.85rem; margin-top:4px">Active Users</div>
+                <div class="text-secondary" style="font-size:0.85rem; margin-top:4px">Active Users</div>
               </div>
               <div class="card" style="text-align:center">
                 <div style="font-size:2.5rem; font-weight:800; font-family:var(--font-display); color:var(--accent-2)">3yrs</div>
-                <div style="color:var(--text-secondary); font-size:0.85rem; margin-top:4px">In Business</div>
+                <div class="text-secondary" style="font-size:0.85rem; margin-top:4px">In Business</div>
               </div>
               <div class="card" style="text-align:center">
                 <div style="font-size:2.5rem; font-weight:800; font-family:var(--font-display); color:var(--warning)">4.5★</div>
-                <div style="color:var(--text-secondary); font-size:0.85rem; margin-top:4px">Avg. Reviews</div>
+                <div class="text-secondary" style="font-size:0.85rem; margin-top:4px">Avg. Reviews</div>
               </div>
             </div>
           </div>
@@ -234,10 +310,6 @@
 
   <div id="footer-root"></div>
 
-  <script src="js/components.js"></script>
-  <script>
-    document.getElementById('navbar-root').innerHTML = getNavbarHTML('about.html');
-    document.getElementById('footer-root').innerHTML = getFooterHTML();
-  </script>
+  <script type="module" src="js/app.js"></script>
 </body>
 </html>

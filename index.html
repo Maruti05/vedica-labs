@@ -3,25 +3,134 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Vedica Labs — Building beautiful, AI-powered digital products for the world." />
-  <title>Vedica Labs — Crafting Digital Experiences</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+
+  <meta name="description" content="Vedica Labs crafts AI-powered mobile apps and web platforms — from HR tech to fitness tools — designed for real people, built with obsessive attention to detail." />
+  <meta name="keywords" content="vedica labs, ai apps, hireiq, veer gym, app development india, ai development, dharwad" />
+  <meta name="author" content="Vedica Labs" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vedicalabs.in/" />
+  <meta property="og:title" content="Vedica Labs — Crafting Digital Experiences" />
+  <meta property="og:description" content="Vedica Labs crafts AI-powered mobile apps and web platforms — from HR tech to fitness tools — designed for real people." />
+  <meta property="og:image" content="https://vedicalabs.in/assets/og-image.png" />
+  <meta property="og:locale" content="en_IN" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://vedicalabs.in/" />
+  <meta name="twitter:title" content="Vedica Labs — Crafting Digital Experiences" />
+  <meta name="twitter:description" content="Vedica Labs crafts AI-powered mobile apps and web platforms — from HR tech to fitness tools — designed for real people." />
+  <meta name="twitter:image" content="https://vedicalabs.in/assets/og-image.png" />
+
+  <link rel="canonical" href="https://vedicalabs.in/" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E⚡%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+
+  <script>
+    (function() {
+      var theme = localStorage.getItem('vl-theme');
+      if (!theme) {
+        theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/navbar.css" />
   <link rel="stylesheet" href="css/footer.css" />
   <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/utilities.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Vedica Labs",
+    "url": "https://vedicalabs.in",
+    "logo": "https://vedicalabs.in/assets/og-image.png",
+    "description": "Building beautiful, AI-powered digital products for the world.",
+    "foundingDate": "2022",
+    "founder": [
+      { "@type": "Person", "name": "Maruti Mangrani" }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dharwad",
+      "addressRegion": "Karnataka",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "vedicalabs@gmail.com",
+      "contactType": "customer service",
+      "availableLanguage": ["English", "Hindi", "Kannada"]
+    },
+    "sameAs": [
+      "https://twitter.com/vedicalabs",
+      "https://linkedin.com/company/vedicalabs",
+      "https://github.com/Maruti05",
+      "https://instagram.com/vedicalabs"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Vedica Labs",
+    "url": "https://vedicalabs.in",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://vedicalabs.in/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "SoftwareApplication",
+        "position": 1,
+        "name": "HireIQ",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Android, Web",
+        "description": "AI-powered real-time voice interview tool that parses resumes and conducts smart interviews.",
+        "url": "https://hire-iq-gamma.vercel.app/"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "position": 2,
+        "name": "Veer Gym",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "Android, Web",
+        "description": "Complete gym management platform with smooth booking, member tracking, and WhatsApp integration.",
+        "url": "https://veer-gym.vercel.app/"
+      }
+    ]
+  }
+  </script>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+  <title>Vedica Labs — Crafting Digital Experiences</title>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <div class="noise-overlay"></div>
 
-  <!-- NAVBAR -->
   <div id="navbar-root"></div>
-  <div id="mobile-nav-root"></div>
 
-  <main class="page-wrapper">
+  <main class="page-wrapper" id="main-content">
 
-    <!-- ========== HERO ========== -->
     <section class="hero">
       <div class="hero-bg"></div>
       <div class="hero-grid-pattern"></div>
@@ -44,7 +153,7 @@
           </p>
 
           <div class="hero-actions animate-fadeInUp animate-delay-3">
-            <a href="index.html#apps" class="btn btn-primary btn-lg">
+            <a href="#apps" class="btn btn-primary btn-lg">
               🚀 Explore Our Apps
             </a>
             <a href="contact.html" class="btn btn-secondary btn-lg">
@@ -73,7 +182,6 @@
         </div>
       </div>
 
-      <!-- Hero Mockup -->
       <div class="hero-visual">
         <div class="hero-mockup">
           <div class="mockup-bar">
@@ -87,7 +195,6 @@
       </div>
     </section>
 
-    <!-- ========== FEATURES ========== -->
     <section class="section" id="features">
       <div class="container">
         <div class="section-header">
@@ -131,8 +238,18 @@
       </div>
     </section>
 
-    <!-- ========== APPS SHOWCASE ========== -->
-    <section class="section" id="apps" style="background: var(--secondary);">
+    <!-- AdSense Ad Unit -->
+    <div class="container" style="padding:var(--space-md) var(--space-xl);text-align:center">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="1234567890"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <section class="section section-alt" id="apps">
       <div class="container">
         <div class="section-header">
           <span class="section-label">Our Portfolio</span>
@@ -144,7 +261,6 @@
       </div>
     </section>
 
-    <!-- ========== CTA ========== -->
     <section class="section">
       <div class="container">
         <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: var(--space-3xl); text-align: center; position: relative; overflow: hidden;">
@@ -164,66 +280,58 @@
 
   </main>
 
-  <!-- FOOTER -->
   <div id="footer-root"></div>
 
-  <script src="js/components.js"></script>
+  <script type="module" src="js/app.js"></script>
   <script>
-    // Inject navbar & footer
-    document.getElementById('navbar-root').innerHTML = getNavbarHTML('index.html');
-    document.getElementById('footer-root').innerHTML = getFooterHTML();
+    import('./js/data/apps.js').then(mod => {
+      const APPS_DATA = mod.APPS_DATA;
 
-    // Render mockup cards
-    const mockupContent = document.getElementById('mockupContent');
-    if (mockupContent) {
-      mockupContent.innerHTML = APPS_DATA.slice(0, 3).map(app => `
-        <div class="mockup-row">
-          <div class="mockup-row-icon" style="background:${app.bg}">${app.icon}</div>
-          <div class="mockup-row-info">
-            <div class="mockup-row-title">${app.name}</div>
-            <div class="mockup-row-sub">${app.category}</div>
+      const mockupContent = document.getElementById('mockupContent');
+      if (mockupContent) {
+        mockupContent.innerHTML = APPS_DATA.slice(0, 3).map(app => `
+          <div class="mockup-row">
+            <div class="mockup-row-icon" style="background:${app.bg}">${app.icon}</div>
+            <div class="mockup-row-info">
+              <div class="mockup-row-title">${app.name}</div>
+              <div class="mockup-row-sub">${app.category}</div>
+            </div>
+            <span class="badge mockup-badge badge-success">★ ${app.rating}</span>
           </div>
-          <span class="badge mockup-badge badge-success">★ ${app.rating}</span>
-        </div>
-      `).join('');
-    }
+        `).join('');
+      }
 
-    // Render apps showcase
-    const grid = document.getElementById('appsShowcaseGrid');
-    if (grid) {
-      grid.innerHTML = APPS_DATA.map(app => `
-        <div class="app-showcase-card">
-          <div class="app-showcase-header">
-            <div class="app-showcase-icon" style="background:${app.bg}">${app.icon}</div>
-            <div class="app-showcase-info">
-              <h3 class="app-showcase-name">${app.name}</h3>
-              <div class="app-showcase-category">${app.category}</div>
-              <div class="app-showcase-rating">
-                <span class="stars">★★★★★</span>
-                <span>${app.rating}</span>
-                <span class="rating-count">(${app.ratingCount} reviews)</span>
+      const grid = document.getElementById('appsShowcaseGrid');
+      if (grid) {
+        grid.innerHTML = APPS_DATA.map(app => `
+          <div class="app-showcase-card">
+            <div class="app-showcase-header">
+              <div class="app-showcase-icon" style="background:${app.bg}">${app.icon}</div>
+              <div class="app-showcase-info">
+                <h3 class="app-showcase-name">${app.name}</h3>
+                <div class="app-showcase-category">${app.category}</div>
+                <div class="app-showcase-rating">
+                  <span class="stars">★★★★★</span>
+                  <span>${app.rating}</span>
+                  <span class="rating-count">(${app.ratingCount} reviews)</span>
+                </div>
+              </div>
+            </div>
+            <div class="app-showcase-body">
+              <p class="app-showcase-desc">${app.fullDesc}</p>
+              <div class="app-showcase-tags">
+                ${app.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+              </div>
+              <div class="app-showcase-actions">
+                <a href="${app.website}" target="_blank" rel="noopener noreferrer" class="app-action-btn web">
+                  🌐 Visit Website
+                </a>
               </div>
             </div>
           </div>
-          <div class="app-showcase-body">
-            <p class="app-showcase-desc">${app.fullDesc}</p>
-            <div class="app-showcase-tags">
-              ${app.tags.map(t => `<span class="tag">${t}</span>`).join('')}
-            </div>
-            <div class="app-showcase-actions">
-              ${app.playStore ? `
-                <a href="${app.playStore}" target="_blank" class="app-action-btn play">
-                  ▶ Play Store
-                </a>
-              ` : ''}
-              <a href="${app.website}" target="_blank" class="app-action-btn web">
-                🌐 Visit Website
-              </a>
-            </div>
-          </div>
-        </div>
-      `).join('');
-    }
+        `).join('');
+      }
+    });
   </script>
 </body>
 </html>

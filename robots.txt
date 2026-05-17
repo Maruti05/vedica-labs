@@ -1,0 +1,9 @@
+# robots.txt for Vedica Labs
+# https://vedicalabs.in
+
+User-agent: *
+Allow: /
+Disallow: /assets/
+Disallow: /.git/
+
+Sitemap: https://vedicalabs.in/sitemap.xml
