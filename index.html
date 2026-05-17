@@ -310,9 +310,13 @@
         grid.innerHTML = APPS_DATA.map(app => `
           <div class="app-showcase-card">
             <div class="app-showcase-header">
-              <div class="app-showcase-icon" style="background:${app.bg}">${app.icon}</div>
+              <div class="app-showcase-icon" style="background:${app.bg};overflow:hidden">${app.image ? `<img src="${app.image}" alt="${app.name}" style="width:100%;height:100%;object-fit:cover;border-radius:inherit" />` : app.icon}</div>
               <div class="app-showcase-info">
-                <h3 class="app-showcase-name">${app.name}</h3>
+                <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+                  <h3 class="app-showcase-name" style="margin-bottom:0">${app.name}</h3>
+                  ${app.recommended ? '<span class="badge badge-accent" style="font-size:0.65rem;padding:2px 8px">★ Recommended</span>' : ''}
+                  <span class="badge ${app.type === 'android' ? 'badge-success' : 'badge-warning'}" style="font-size:0.6rem;padding:2px 8px;text-transform:uppercase">${app.type === 'android' ? '📱 Android' : '🌐 Website'}</span>
+                </div>
                 <div class="app-showcase-category">${app.category}</div>
                 <div class="app-showcase-rating">
                   <span class="stars">★★★★★</span>
@@ -327,9 +331,22 @@
                 ${app.tags.map(t => `<span class="tag">${t}</span>`).join('')}
               </div>
               <div class="app-showcase-actions">
-                <a href="${app.website}" target="_blank" rel="noopener noreferrer" class="app-action-btn web">
-                  🌐 Visit Website
-                </a>
+                ${app.type === 'android' && app.playStoreUrl ? `
+                  <a href="${app.playStoreUrl}" target="_blank" rel="noopener noreferrer" style="display:inline-block">
+                    <svg width="180" height="54" viewBox="0 0 180 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="180" height="54" rx="8" fill="#1a1a1a"/>
+                      <path d="M38 14.5C36.6 14.5 35.5 15.6 35.5 17V37C35.5 38.4 36.6 39.5 38 39.5L54 27L38 14.5Z" fill="white"/>
+                      <path d="M56.5 35L47.5 29.5L38 39.5L55 39C56.1 39 57 38.1 57 37L56.5 35Z" fill="white" opacity="0.7"/>
+                      <path d="M56.5 19L47.5 24.5L38 14.5L55 15C56.1 15 57 15.9 57 17L56.5 19Z" fill="white" opacity="0.5"/>
+                      <text x="72" y="25" font-family="Arial, sans-serif" font-size="8" font-weight="700" fill="white" letter-spacing="1">GET IT ON</text>
+                      <text x="72" y="42" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="white">Google Play</text>
+                    </svg>
+                  </a>
+                ` : `
+                  <a href="${app.website}" target="_blank" rel="noopener noreferrer" class="app-action-btn web">
+                    🌐 Visit Website
+                  </a>
+                `}
               </div>
             </div>
           </div>

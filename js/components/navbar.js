@@ -49,15 +49,28 @@ export function getNavbarHTML(activePage) {
       <div class="apps-list">
         ${APPS_DATA.map(app => `
           <div class="app-item">
-            <div class="app-icon-wrap" style="background: ${app.bg}">${app.icon}</div>
+            <div class="app-icon-wrap" style="background: ${app.bg}; overflow:hidden">${app.image ? `<img src="${app.image}" alt="${app.name}" style="width:100%;height:100%;object-fit:cover;border-radius:inherit" />` : app.icon}</div>
             <div class="app-info">
               <div class="app-name">${app.name}</div>
               <div class="app-desc">${app.desc}</div>
             </div>
             <div class="app-links">
-              <a href="${app.website}" target="_blank" rel="noopener noreferrer" class="app-link-btn website">
-                \uD83C\uDF10 Website
-              </a>
+              ${app.type === 'android' && app.playStoreUrl ? `
+                <a href="${app.playStoreUrl}" target="_blank" rel="noopener noreferrer" style="display:inline-block;flex-shrink:0">
+                  <svg width="130" height="39" viewBox="0 0 130 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="130" height="39" rx="6" fill="#1a1a1a"/>
+                    <path d="M28 10.5C27 10.5 26 11.5 26 12.5V26.5C26 27.5 27 28.5 28 28.5L39 19.5L28 10.5Z" fill="white"/>
+                    <path d="M41 25.5L35 21.5L28 28.5L40 28C40.5 28 41 27.5 41 27L41 25.5Z" fill="white" opacity="0.7"/>
+                    <path d="M41 14.5L35 18.5L28 10.5L40 11C40.5 11 41 11.5 41 12.5L41 14.5Z" fill="white" opacity="0.5"/>
+                    <text x="52" y="18" font-family="Arial, sans-serif" font-size="6" font-weight="700" fill="white" letter-spacing="0.8">GET IT ON</text>
+                    <text x="52" y="31" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="white">Google Play</text>
+                  </svg>
+                </a>
+              ` : `
+                <a href="${app.website}" target="_blank" rel="noopener noreferrer" class="app-link-btn website">
+                  \uD83C\uDF10 Website
+                </a>
+              `}
             </div>
           </div>
         `).join("")}
