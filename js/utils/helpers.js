@@ -83,6 +83,14 @@ export function initTOCScroll() {
   sections.forEach(s => observer.observe(s));
 }
 
+export function sanitizeInput(str, maxLength = 2000) {
+  if (typeof str !== "string") return "";
+  let sanitized = str.replace(/<[^>]*>/g, "");
+  sanitized = sanitized.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, "");
+  sanitized = sanitized.slice(0, maxLength);
+  return sanitized;
+}
+
 export function getCurrentPage() {
   return window.location.pathname.split("/").pop() || "index.html";
 }

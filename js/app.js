@@ -1,12 +1,13 @@
 import { getNavbarHTML, initNavbarScroll, setActiveNav, initNavbarEvents } from "./components/navbar.js";
 import { getFooterHTML } from "./components/footer.js";
 import { initTheme } from "./utils/theme.js";
-import { buildMailtoLink, openMailClient, initScrollAnimations, initTOCScroll } from "./utils/helpers.js";
+import { buildMailtoLink, openMailClient, sanitizeInput, initScrollAnimations, initTOCScroll } from "./utils/helpers.js";
 
 window.getNavbarHTML = getNavbarHTML;
 window.getFooterHTML = getFooterHTML;
 window.buildMailtoLink = buildMailtoLink;
 window.openMailClient = openMailClient;
+window.sanitizeInput = sanitizeInput;
 
 document.addEventListener("DOMContentLoaded", () => {
   const navbarRoot = document.getElementById("navbar-root");

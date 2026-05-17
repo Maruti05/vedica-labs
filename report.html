@@ -64,6 +64,10 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 
   <title>Report an Issue — Vedica Labs</title>
+
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://www.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://google.com https://www.google.com; connect-src 'self' https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://google.com https://www.google.com; form-action 'self' mailto:; base-uri 'self'; object-src 'none';" />
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), camera=(), microphone=(), payment=(), usb=(), magnetometer=(), accelerometer=(), gyroscope=()" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -289,26 +293,29 @@
       const successToast = document.getElementById('issueSuccess');
       const formData = new FormData(form);
 
+      const sanitize = window.sanitizeInput || (s => s);
+      const sanitizeLine = s => sanitize(s).replace(/[\r\n]/g, ' ').trim();
+
       const attachmentsText = selectedIssueFiles.length
-        ? selectedIssueFiles.map(file => `- ${file.name}`).join('\n')
+        ? selectedIssueFiles.map(file => `- ${file.name || 'file'}`).join('\n')
         : 'None';
 
       const body = [
-        `Affected App: ${formData.get('affectedApp') || '—'}`,
-        `Platform: ${formData.get('platform') || '—'}`,
-        `Reporter Name: ${formData.get('reporterName') || '—'}`,
-        `Reporter Email: ${formData.get('reporterEmail') || '—'}`,
-        `Issue Title: ${formData.get('issueTitle') || '—'}`,
-        `Severity: ${formData.get('severity') || '—'}`,
+        `Affected App: ${sanitizeLine(formData.get('affectedApp')) || '—'}`,
+        `Platform: ${sanitizeLine(formData.get('platform')) || '—'}`,
+        `Reporter Name: ${sanitizeLine(formData.get('reporterName')) || '—'}`,
+        `Reporter Email: ${sanitizeLine(formData.get('reporterEmail')) || '—'}`,
+        `Issue Title: ${sanitizeLine(formData.get('issueTitle')) || '—'}`,
+        `Severity: ${sanitizeLine(formData.get('severity')) || '—'}`,
         ``,
         `Description:`,
-        `${formData.get('description') || '—'}`,
+        `${sanitize(formData.get('description')) || '—'}`,
         ``,
         `Steps to Reproduce:`,
-        `${formData.get('steps') || 'Not provided'}`,
+        `${sanitize(formData.get('steps')) || 'Not provided'}`,
         ``,
-        `App Version: ${formData.get('appVersion') || '—'}`,
-        `OS Version: ${formData.get('osVersion') || '—'}`,
+        `App Version: ${sanitizeLine(formData.get('appVersion')) || '—'}`,
+        `OS Version: ${sanitizeLine(formData.get('osVersion')) || '—'}`,
         ``,
         `Attachments:`,
         `${attachmentsText}`,

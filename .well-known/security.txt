@@ -1,0 +1,15 @@
+# Security Contact for Vedica Labs
+# https://vedicalabs.in
+
+Contact: mailto:vedicalabs@gmail.com
+Contact: mailto:security@vedicalabs.in
+Expires: 2027-12-31T23:59:00.000Z
+Encryption: https://keys.openpgp.org/search?q=security@vedicalabs.in
+Preferred-Languages: en, hi, kn
+Canonical: https://vedicalabs.in/.well-known/security.txt
+Policy: https://vedicalabs.in/privacy.html
+
+# The above contact information is intended for the responsible
+# disclosure of security vulnerabilities in Vedica Labs products
+# and services. We commit to acknowledging receipt within 48 hours
+# and providing an initial assessment within 5 business days.

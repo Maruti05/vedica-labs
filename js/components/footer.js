@@ -59,6 +59,7 @@ export function getFooterHTML() {
           <a href="privacy.html">Privacy Policy</a>
           <a href="privacy.html#terms">Terms of Service</a>
           <a href="report.html">Report Issue</a>
+          <a href=".well-known/security.txt" target="_blank" rel="noopener noreferrer">Security</a>
         </div>
       </div>
     </div>
